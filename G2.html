@@ -1,0 +1,1457 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="AI-generated website">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="index, follow">
+
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+             colors: {
+                primary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      </script>
+
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <style>
+      * {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+        ::-webkit-scrollbar {
+          width: 0px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: #666;
+        }
+
+        * {
+          -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        :focus-visible {
+          outline: 2px solid currentColor;
+          outline-offset: 2px;
+        }
+
+        @media print {
+          .no-print {
+            display: none !important;
+          }
+          
+          a[href]:after {
+            content: " (" attr(href) ")";
+          }
+        }
+      </style>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                  const tempImage = new Image();
+                  tempImage.onload = () => {
+                    img.src = img.dataset.src;
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100');
+                  };
+                  tempImage.src = img.dataset.src;
+                  img.removeAttribute('data-src');
+                  observer.unobserve(img);
+                }
+              }
+            });
+          }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+          });
+
+          const loadImage = (img) => {
+            if ('loading' in HTMLImageElement.prototype) {
+              img.loading = 'lazy';
+            }
+            
+            img.classList.add('transition-opacity', 'duration-300', 'opacity-0');
+            
+            img.onerror = () => {
+              const width = img.getAttribute('width') || img.clientWidth || 300;
+              const height = img.getAttribute('height') || img.clientHeight || 200;
+              img.src = `https://placehold.co/${width}x${height}/DEDEDE/555555?text=Image+Unavailable`;
+              img.alt = 'Image unavailable';
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100', 'error-image');
+            };
+
+            if (img.dataset.src) {
+              imageObserver.observe(img);
+            } else {
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100');
+            }
+          };
+          document.querySelectorAll('img[data-src], img:not([data-src])').forEach(loadImage);
+
+          new MutationObserver((mutations) => {
+            mutations.forEach(mutation => {
+              mutation.addedNodes.forEach(node => {
+                if (node.nodeType === 1) {
+                  if (node.tagName === 'IMG') {
+                    loadImage(node);
+                  }
+                  node.querySelectorAll('img').forEach(loadImage);
+                }
+              });
+            });
+          }).observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        });
+
+        if ('performance' in window && 'PerformanceObserver' in window) {
+          const observer = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            entries.forEach((entry) => {
+              if (entry.entryType === 'largest-contentful-paint') {
+
+              }
+              if (entry.entryType === 'first-input') {
+              }
+              if (entry.entryType === 'layout-shift') {
+              }
+            });
+          });
+
+          observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+
+          window.addEventListener('load', () => {
+            const timing = performance.getEntriesByType('navigation')[0];
+            console.log({
+              'DNS Lookup': timing.domainLookupEnd - timing.domainLookupStart,
+              'TCP Connection': timing.connectEnd - timing.connectStart,
+              'DOM Content Loaded': timing.domContentLoadedEventEnd - timing.navigationStart,
+              'Page Load': timing.loadEventEnd - timing.navigationStart
+            });
+          });
+        }
+
+        window.addEventListener('online', () => {
+          document.body.classList.remove('offline');
+          console.log('Connection restored');
+        });
+        
+        window.addEventListener('offline', () => {
+          document.body.classList.add('offline');
+          console.log('Connection lost');
+        });
+      </script>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <header class="relative z-50 bg-white dark:bg-gray-900">
+      </header>
+
+      <main id="main-content" class="flex-1 relative ">
+      </main>
+   </body>
+</html><element id="11da675d-40e6-4bf4-93f5-1763caeb238a" data-section-id="11da675d-40e6-4bf4-93f5-1763caeb238a">
+
+<htmlCode>
+<div id="root">
+    <div class="flex">
+        <nav class="fixed h-screen w-64 bg-white border-r border-neutral-200/20 hidden lg:flex flex-col justify-between">
+            <div class="flex flex-col">
+                <div class="p-4 border-b border-neutral-200/20">
+                    <h1 class="text-xl font-bold text-neutral-800">Personal Finance Tracker</h1>
+                </div>
+                <div class="p-4 flex flex-col space-y-2">
+                    <a href="#dashboard" class="flex items-center px-4 py-2 text-neutral-700 hover:bg-neutral-100 rounded-lg transition-all duration-200 active">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a href="#transactions" class="flex items-center px-4 py-2 text-neutral-700 hover:bg-neutral-100 rounded-lg transition-all duration-200">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Transactions
+                    </a>
+                    <a href="#budgets" class="flex items-center px-4 py-2 text-neutral-700 hover:bg-neutral-100 rounded-lg transition-all duration-200">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                        Budgets
+                    </a>
+                    <a href="#reports" class="flex items-center px-4 py-2 text-neutral-700 hover:bg-neutral-100 rounded-lg transition-all duration-200">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                        Reports
+                    </a>
+                    <a href="#savings" class="flex items-center px-4 py-2 text-neutral-700 hover:bg-neutral-100 rounded-lg transition-all duration-200">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                        </svg>
+                        Savings
+                    </a>
+                    <a href="#profile" class="flex items-center px-4 py-2 text-neutral-700 hover:bg-neutral-100 rounded-lg transition-all duration-200">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        Profile
+                    </a>
+                </div>
+            </div>
+            <div class="p-4 border-t border-neutral-200/20">
+                <button class="flex items-center px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-all duration-200 w-full">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    </svg>
+                    Logout
+                </button>
+            </div>
+        </nav>
+
+        <div class="lg:hidden fixed w-full bg-white border-b border-neutral-200/20 z-50">
+            <div class="flex items-center justify-between p-4">
+                <h1 class="text-xl font-bold text-neutral-800">Financer</h1>
+                <button id="mobile-menu-button" class="p-2 rounded-lg hover:bg-neutral-100">
+                    <svg class="w-6 h-6" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg class="w-6 h-6 hidden" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden bg-white border-t border-neutral-200/20">
+                <div class="p-4 flex flex-col space-y-2">
+
+                    <a href="#dashboard" class="flex items-center px-4 py-2 text-neutral-700 hover:bg-neutral-100 rounded-lg">Dashboard</a>
+                    <a href="#transactions" class="flex items-center px-4 py-2 text-neutral-700 hover:bg-neutral-100 rounded-lg">Transactions</a>
+                    <a href="#budgets" class="flex items-center px-4 py-2 text-neutral-700 hover:bg-neutral-100 rounded-lg">Budgets</a>
+                    <a href="#reports" class="flex items-center px-4 py-2 text-neutral-700 hover:bg-neutral-100 rounded-lg">Reports</a>
+                    <a href="#savings" class="flex items-center px-4 py-2 text-neutral-700 hover:bg-neutral-100 rounded-lg">Savings</a>
+                    <a href="#profile" class="flex items-center px-4 py-2 text-neutral-700 hover:bg-neutral-100 rounded-lg">Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <main class="flex-1 lg:ml-64 min-h-screen bg-neutral-50">
+            <MountPoint>
+
+<script>
+
+document.getElementById('mobile-menu-button').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    mobileMenu.classList.toggle('hidden');
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('nav a');
+    
+    function setActiveLink() {
+        const hash = window.location.hash || '#dashboard';
+        links.forEach(link => {
+            if(link.getAttribute('href') === hash) {
+                link.classList.add('active', 'bg-neutral-100');
+            } else {
+                link.classList.remove('active', 'bg-neutral-100');
+            }
+        });
+    }
+
+    window.addEventListener('hashchange', setActiveLink);
+    setActiveLink();
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+.active {
+    background-color: #F3F4F6;
+    color: #1F2937;
+}
+
+@media (max-width: 1024px) {
+    main {
+        margin-left: 0;
+        padding-top: 64px;
+    }
+}
+
+#mobile-menu {
+    transition: all 0.3s ease-in-out;
+}
+
+#mobile-menu-button svg {
+    transition: all 0.3s ease-in-out;
+}
+</style></element><element id="85cea162-1c2a-45f1-a17f-42e652b3ec8b" data-section-id="85cea162-1c2a-45f1-a17f-42e652b3ec8b">
+
+<htmlCode>
+<div id="dashboard" class="p-6 space-y-6">
+
+    <header class="flex justify-between items-center mb-6">
+        <div>
+            <h1 class="text-2xl font-bold text-neutral-800">Dashboard</h1>
+            <p class="text-neutral-500">Welcome back, User</p>
+        </div>
+        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+            + Add Transaction
+        </button>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="p-4 bg-white border border-neutral-200/20 rounded-lg">
+            <div class="flex items-center justify-between">
+                <h3 class="text-neutral-500">Total Balance</h3>
+                <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <p class="text-2xl font-bold text-neutral-800 mt-2">₹24,500</p>
+            <p class="text-green-500 text-sm mt-2">+2.5% from last month</p>
+        </div>
+
+        <div class="p-4 bg-white border border-neutral-200/20 rounded-lg">
+            <div class="flex items-center justify-between">
+                <h3 class="text-neutral-500">Monthly Income</h3>
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"></path>
+                </svg>
+            </div>
+            <p class="text-2xl font-bold text-neutral-800 mt-2">₹8,000</p>
+            <p class="text-green-500 text-sm mt-2">+5% from last month</p>
+        </div>
+
+        <div class="p-4 bg-white border border-neutral-200/20 rounded-lg">
+            <div class="flex items-center justify-between">
+                <h3 class="text-neutral-500">Monthly Expenses</h3>
+                <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6"></path>
+                </svg>
+            </div>
+            <p class="text-2xl font-bold text-neutral-800 mt-2">₹3,500</p>
+            <p class="text-red-500 text-sm mt-2">-2% from last month</p>
+        </div>
+
+        <div class="p-4 bg-white border border-neutral-200/20 rounded-lg">
+            <div class="flex items-center justify-between">
+                <h3 class="text-neutral-500">Savings</h3>
+                <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                </svg>
+            </div>
+            <p class="text-2xl font-bold text-neutral-800 mt-2">₹4,500</p>
+            <p class="text-purple-500 text-sm mt-2">56% of goal reached</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+
+        <div class="p-6 bg-white border border-neutral-200/20 rounded-lg">
+            <h3 class="text-lg font-semibold text-neutral-800 mb-4">Expense Categories</h3>
+            <div class="space-y-4">
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-neutral-600">Rent</span>
+                        <span class="text-neutral-800 font-medium">₹1,500</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 45%"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-neutral-600">Groceries</span>
+                        <span class="text-neutral-800 font-medium">₹800</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 rounded-full h-2">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: 25%"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-neutral-600">Utilities</span>
+                        <span class="text-neutral-800 font-medium">₹400</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 rounded-full h-2">
+                        <div class="bg-yellow-500 h-2 rounded-full" style="width: 15%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-6 bg-white border border-neutral-200/20 rounded-lg">
+            <h3 class="text-lg font-semibold text-neutral-800 mb-4">Savings Goals</h3>
+            <div class="space-y-4">
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-neutral-600">Emergency Fund</span>
+                        <span class="text-neutral-800 font-medium">₹10,000/₹15,000</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 rounded-full h-2">
+                        <div class="bg-purple-500 h-2 rounded-full" style="width: 66%"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-neutral-600">Vacation</span>
+                        <span class="text-neutral-800 font-medium">₹2,000/₹5,000</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 rounded-full h-2">
+                        <div class="bg-indigo-500 h-2 rounded-full" style="width: 40%"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-neutral-600">New Car</span>
+                        <span class="text-neutral-800 font-medium">₹5,000/₹25,000</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 rounded-full h-2">
+                        <div class="bg-pink-500 h-2 rounded-full" style="width: 20%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-6 p-6 bg-white border border-neutral-200/20 rounded-lg">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-semibold text-neutral-800">Recent Transactions</h3>
+            <a href="#transactions" class="text-blue-600 hover:text-blue-700 text-sm">View All</a>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full">
+                <thead>
+                    <tr class="text-left text-neutral-500 border-b border-neutral-200/20">
+                        <th class="pb-3">Date</th>
+                        <th class="pb-3">Description</th>
+                        <th class="pb-3">Category</th>
+                        <th class="pb-3">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-neutral-200/20">
+                        <td class="py-3">Sept 15</td>
+                        <td>Grocery Store</td>
+                        <td>Groceries</td>
+                        <td class="text-red-500">-₹156.85</td>
+                    </tr>
+                    <tr class="border-b border-neutral-200/20">
+                        <td class="py-3">Sept 14</td>
+                        <td>Salary Deposit</td>
+                        <td>Income</td>
+                        <td class="text-green-500">+₹4,000.00</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3">Sept 13</td>
+                        <td>Electric Bill</td>
+                        <td>Utilities</td>
+                        <td class="text-red-500">-₹85.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</htmlCode></element><element id="33976a49-5458-4484-b5eb-81e76efa8f17" data-section-id="33976a49-5458-4484-b5eb-81e76efa8f17">
+
+<htmlCode>
+<div id="transactions" class="p-6 space-y-6">
+
+    <header class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold text-neutral-800">Transactions</h1>
+        <button onclick="document.getElementById('addTransactionModal').classList.remove('hidden')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+            + Add Transaction
+        </button>
+    </header>
+
+    <div class="bg-white border border-neutral-200/20 rounded-lg p-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="space-y-2">
+                <label class="text-sm text-neutral-600">Date Range</label>
+                <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                    <option>Last 7 days</option>
+                    <option>Last 30 days</option>
+                    <option>Last 3 months</option>
+                    <option>Custom Range</option>
+                </select>
+            </div>
+            <div class="space-y-2">
+                <label class="text-sm text-neutral-600">Category</label>
+                <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                    <option>All Categories</option>
+                    <option>Food & Dining</option>
+                    <option>Shopping</option>
+                    <option>Housing</option>
+                    <option>Transportation</option>
+                </select>
+            </div>
+            <div class="space-y-2">
+                <label class="text-sm text-neutral-600">Amount Range</label>
+                <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                    <option>All Amounts</option>
+                    <option>₹0 - ₹100</option>
+                    <option>₹100 - ₹500</option>
+                    <option>₹500+</option>
+                </select>
+            </div>
+            <div class="space-y-2">
+                <label class="text-sm text-neutral-600">Type</label>
+                <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                    <option>All Types</option>
+                    <option>Income</option>
+                    <option>Expense</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white border border-neutral-200/20 rounded-lg overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full">
+                <thead>
+                    <tr class="bg-neutral-50 border-b border-neutral-200/20">
+                        <th class="px-6 py-3 text-left text-sm font-medium text-neutral-600">Date</th>
+                        <th class="px-6 py-3 text-left text-sm font-medium text-neutral-600">Category</th>
+                        <th class="px-6 py-3 text-left text-sm font-medium text-neutral-600">Description</th>
+                        <th class="px-6 py-3 text-left text-sm font-medium text-neutral-600">Amount</th>
+                        <th class="px-6 py-3 text-left text-sm font-medium text-neutral-600">Payment Method</th>
+                        <th class="px-6 py-3 text-left text-sm font-medium text-neutral-600">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-neutral-200/20">
+                    <tr class="hover:bg-neutral-50">
+                        <td class="px-6 py-4 text-sm text-neutral-800">2023-09-15</td>
+                        <td class="px-6 py-4 text-sm text-neutral-800">Groceries</td>
+                        <td class="px-6 py-4 text-sm text-neutral-800">Walmart Superstore</td>
+                        <td class="px-6 py-4 text-sm text-red-500">-₹156.85</td>
+                        <td class="px-6 py-4 text-sm text-neutral-800">Credit Card</td>
+                        <td class="px-6 py-4 text-sm">
+                            <div class="flex space-x-2">
+                                <button class="text-blue-600 hover:text-blue-700">Edit</button>
+                                <button class="text-red-600 hover:text-red-700">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-neutral-50">
+                        <td class="px-6 py-4 text-sm text-neutral-800">2023-09-14</td>
+                        <td class="px-6 py-4 text-sm text-neutral-800">Salary</td>
+                        <td class="px-6 py-4 text-sm text-neutral-800">Monthly Salary</td>
+                        <td class="px-6 py-4 text-sm text-green-500">+₹4,000.00</td>
+                        <td class="px-6 py-4 text-sm text-neutral-800">Bank Transfer</td>
+                        <td class="px-6 py-4 text-sm">
+                            <div class="flex space-x-2">
+                                <button class="text-blue-600 hover:text-blue-700">Edit</button>
+                                <button class="text-red-600 hover:text-red-700">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="addTransactionModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-neutral-800">Add Transaction</h2>
+                <button onclick="document.getElementById('addTransactionModal').classList.add('hidden')" class="text-neutral-500 hover:text-neutral-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Type</label>
+                    <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                        <option>Expense</option>
+                        <option>Income</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Amount</label>
+                    <input type="number" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="0.00">
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Category</label>
+                    <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                        <option>Food & Dining</option>
+                        <option>Shopping</option>
+                        <option>Housing</option>
+                        <option>Transportation</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Date</label>
+                    <input type="date" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Description</label>
+                    <input type="text" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter description">
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Payment Method</label>
+                    <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                        <option>Cash</option>
+                        <option>Credit Card</option>
+                        <option>Debit Card</option>
+                        <option>Bank Transfer</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Add Transaction
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+</htmlCode></element><element id="766f3841-eb0a-42a0-a050-ae7000bc89e4" data-section-id="766f3841-eb0a-42a0-a050-ae7000bc89e4">
+
+<htmlCode>
+<div id="budgets" class="p-6 space-y-6">
+
+    <header class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold text-neutral-800">Budgets</h1>
+        <button onclick="document.getElementById('addBudgetModal').classList.remove('hidden')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+            + Set New Budget
+        </button>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-white p-4 rounded-lg border border-neutral-200/20">
+            <h3 class="text-neutral-500 mb-2">Total Budget</h3>
+            <p class="text-2xl font-bold text-neutral-800">₹5,000</p>
+            <p class="text-sm text-neutral-600">Monthly Limit</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg border border-neutral-200/20">
+            <h3 class="text-neutral-500 mb-2">Spent</h3>
+            <p class="text-2xl font-bold text-red-500">₹3,250</p>
+            <p class="text-sm text-neutral-600">65% of total budget</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg border border-neutral-200/20">
+            <h3 class="text-neutral-500 mb-2">Remaining</h3>
+            <p class="text-2xl font-bold text-green-500">₹1,750</p>
+            <p class="text-sm text-neutral-600">35% of total budget</p>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+        <h2 class="text-lg font-semibold text-neutral-800 mb-4">Budget Categories</h2>
+        <div class="space-y-6">
+
+            <div class="border-b border-neutral-200/20 pb-4">
+                <div class="flex justify-between items-center mb-2">
+                    <div>
+                        <h3 class="font-medium text-neutral-800">Housing</h3>
+                        <p class="text-sm text-neutral-600">₹1,500 of ₹2,000</p>
+                    </div>
+                    <span class="text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full text-xs">75% spent</span>
+                </div>
+                <div class="w-full bg-neutral-200 rounded-full h-2">
+                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 75%"></div>
+                </div>
+            </div>
+
+            <div class="border-b border-neutral-200/20 pb-4">
+                <div class="flex justify-between items-center mb-2">
+                    <div>
+                        <h3 class="font-medium text-neutral-800">Groceries</h3>
+                        <p class="text-sm text-neutral-600">₹800 of ₹800</p>
+                    </div>
+                    <span class="text-red-600 bg-red-100 px-2 py-1 rounded-full text-xs">100% spent</span>
+                </div>
+                <div class="w-full bg-neutral-200 rounded-full h-2">
+                    <div class="bg-red-500 h-2 rounded-full" style="width: 100%"></div>
+                </div>
+            </div>
+
+            <div class="border-b border-neutral-200/20 pb-4">
+                <div class="flex justify-between items-center mb-2">
+                    <div>
+                        <h3 class="font-medium text-neutral-800">Transportation</h3>
+                        <p class="text-sm text-neutral-600">₹200 of ₹400</p>
+                    </div>
+                    <span class="text-green-600 bg-green-100 px-2 py-1 rounded-full text-xs">50% spent</span>
+                </div>
+                <div class="w-full bg-neutral-200 rounded-full h-2">
+                    <div class="bg-green-500 h-2 rounded-full" style="width: 50%"></div>
+                </div>
+            </div>
+
+            <div class="pb-4">
+                <div class="flex justify-between items-center mb-2">
+                    <div>
+                        <h3 class="font-medium text-neutral-800">Entertainment</h3>
+                        <p class="text-sm text-neutral-600">₹150 of ₹300</p>
+                    </div>
+                    <span class="text-green-600 bg-green-100 px-2 py-1 rounded-full text-xs">50% spent</span>
+                </div>
+                <div class="w-full bg-neutral-200 rounded-full h-2">
+                    <div class="bg-green-500 h-2 rounded-full" style="width: 50%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addBudgetModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-neutral-800">Set New Budget</h2>
+                <button onclick="document.getElementById('addBudgetModal').classList.add('hidden')" class="text-neutral-500 hover:text-neutral-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Category</label>
+                    <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                        <option>Housing</option>
+                        <option>Groceries</option>
+                        <option>Transportation</option>
+                        <option>Entertainment</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Budget Amount</label>
+                    <input type="number" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="0.00">
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Time Period</label>
+                    <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                        <option>Monthly</option>
+                        <option>Weekly</option>
+                        <option>Yearly</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Start Date</label>
+                    <input type="date" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Alert Threshold (%)</label>
+                    <input type="number" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="80">
+                </div>
+                <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Set Budget
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="fixed bottom-4 right-4">
+        <div class="bg-red-500 text-white p-4 rounded-lg shadow-lg flex items-center space-x-3">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+            <div>
+                <h4 class="font-medium">Budget Alert</h4>
+                <p class="text-sm">Groceries budget has been exceeded!</p>
+            </div>
+            <button class="text-white hover:text-red-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+</htmlCode></element><element id="79f9e412-7f7e-45ec-b239-58c5d99ce8c8" data-section-id="79f9e412-7f7e-45ec-b239-58c5d99ce8c8">
+
+<htmlCode>
+<div id="reports" class="p-6 space-y-6">
+
+    <header class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold text-neutral-800">Financial Reports</h1>
+        <div class="flex space-x-2">
+            <button class="px-4 py-2 bg-neutral-100 text-neutral-700 rounded-lg hover:bg-neutral-200 transition-colors flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                Export as PDF
+            </button>
+            <button class="px-4 py-2 bg-neutral-100 text-neutral-700 rounded-lg hover:bg-neutral-200 transition-colors flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Export as Excel
+            </button>
+        </div>
+    </header>
+
+    <div class="bg-white border border-neutral-200/20 rounded-lg p-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+                <label class="block text-sm text-neutral-600 mb-1">Date Range</label>
+                <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                    <option>Last Month</option>
+                    <option>Last Quarter</option>
+                    <option>Last Year</option>
+                    <option>Custom Range</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm text-neutral-600 mb-1">Category</label>
+                <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                    <option>All Categories</option>
+                    <option>Housing</option>
+                    <option>Transportation</option>
+                    <option>Food</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm text-neutral-600 mb-1">Transaction Type</label>
+                <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                    <option>All Types</option>
+                    <option>Income</option>
+                    <option>Expense</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <div class="bg-white border border-neutral-200/20 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-neutral-800 mb-4">Income vs Expenses Trend</h3>
+            <div class="h-64 bg-neutral-50 rounded-lg border border-neutral-200/20 flex items-center justify-center">
+
+                <img src="\.....PROJECT\10. PERSONAL FINANCE TRACKER/1.jpg" alt="Monthly Income vs Expenses Chart" />
+            </div>
+        </div>
+
+        <div class="bg-white border border-neutral-200/20 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-neutral-800 mb-4">Expense Categories</h3>
+            <div class="h-64 bg-neutral-50 rounded-lg border border-neutral-200/20 flex items-center justify-center">
+
+                <img src="\.....PROJECT\10. PERSONAL FINANCE TRACKER/2.jpg" alt="Category Breakdown Pie Chart" />
+            </div>
+        </div>
+
+        <div class="bg-white border border-neutral-200/20 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-neutral-800 mb-4">Monthly Savings</h3>
+            <div class="h-64 bg-neutral-50 rounded-lg border border-neutral-200/20 flex items-center justify-center">
+
+                <img src="\.....PROJECT\10. PERSONAL FINANCE TRACKER/3.jpg" alt="Savings Progress Chart" />
+            </div>
+        </div>
+
+
+        <div class="bg-white border border-neutral-200/20 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-neutral-800 mb-4">Budget Analysis</h3>
+            <div class="h-64 bg-neutral-50 rounded-lg border border-neutral-200/20 flex items-center justify-center">
+
+                <img src="\.....PROJECT\10. PERSONAL FINANCE TRACKER/4.jpg" alt="Budget Utilization Chart" />
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white border border-neutral-200/20 rounded-lg p-6">
+        <h3 class="text-lg font-semibold text-neutral-800 mb-4">Summary Statistics</h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="p-4 bg-neutral-50 rounded-lg border border-neutral-200/20">
+                <h4 class="text-sm text-neutral-600">Total Income</h4>
+                <p class="text-xl font-bold text-green-500">₹12,500</p>
+                <p class="text-sm text-neutral-500">+15% vs last period</p>
+            </div>
+            <div class="p-4 bg-neutral-50 rounded-lg border border-neutral-200/20">
+                <h4 class="text-sm text-neutral-600">Total Expenses</h4>
+                <p class="text-xl font-bold text-red-500">₹8,750</p>
+                <p class="text-sm text-neutral-500">-5% vs last period</p>
+            </div>
+            <div class="p-4 bg-neutral-50 rounded-lg border border-neutral-200/20">
+                <h4 class="text-sm text-neutral-600">Net Savings</h4>
+                <p class="text-xl font-bold text-blue-500">₹3,750</p>
+                <p class="text-sm text-neutral-500">+25% vs last period</p>
+            </div>
+            <div class="p-4 bg-neutral-50 rounded-lg border border-neutral-200/20">
+                <h4 class="text-sm text-neutral-600">Average Spending</h4>
+                <p class="text-xl font-bold text-purple-500">₹291/day</p>
+                <p class="text-sm text-neutral-500">-2% vs last period</p>
+            </div>
+        </div>
+    </div>
+</div>
+</htmlCode></element><element id="53fb7ca8-d567-46f1-baa7-1c08eb0c6b36" data-section-id="53fb7ca8-d567-46f1-baa7-1c08eb0c6b36">
+
+<htmlCode>
+<div id="savings" class="p-6 space-y-6">
+
+    <header class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold text-neutral-800">Savings Goals</h1>
+        <button onclick="document.getElementById('addSavingsGoalModal').classList.remove('hidden')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+            + New Savings Goal
+        </button>
+    </header>
+
+    <div class="bg-white border border-neutral-200/20 rounded-lg p-6">
+        <h2 class="text-lg font-semibold text-neutral-800 mb-4">Active Goals</h2>
+        <div class="space-y-6">
+
+            <div class="border-b border-neutral-200/20 pb-6">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="font-medium text-neutral-800">Emergency Fund</h3>
+                        <p class="text-sm text-neutral-600">Target Date: December 2023</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-medium text-neutral-800">₹10,000 / ₹15,000</p>
+                        <p class="text-sm text-green-500">66% completed</p>
+                    </div>
+                </div>
+                <div class="w-full bg-neutral-200 rounded-full h-2 mb-2">
+                    <div class="bg-green-500 h-2 rounded-full" style="width: 66%"></div>
+                </div>
+                <div class="flex justify-between">
+                    <button class="text-blue-600 hover:text-blue-700 text-sm">Edit Goal</button>
+                    <button class="text-red-600 hover:text-red-700 text-sm">Delete</button>
+                </div>
+            </div>
+
+            <div class="border-b border-neutral-200/20 pb-6">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="font-medium text-neutral-800">Dream Vacation</h3>
+                        <p class="text-sm text-neutral-600">Target Date: July 2024</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-medium text-neutral-800">₹2,000 / ₹5,000</p>
+                        <p class="text-sm text-blue-500">40% completed</p>
+                    </div>
+                </div>
+                <div class="w-full bg-neutral-200 rounded-full h-2 mb-2">
+                    <div class="bg-blue-500 h-2 rounded-full" style="width: 40%"></div>
+                </div>
+                <div class="flex justify-between">
+                    <button class="text-blue-600 hover:text-blue-700 text-sm">Edit Goal</button>
+                    <button class="text-red-600 hover:text-red-700 text-sm">Delete</button>
+                </div>
+            </div>
+
+            <div class="pb-4">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="font-medium text-neutral-800">New Car</h3>
+                        <p class="text-sm text-neutral-600">Target Date: March 2025</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-medium text-neutral-800">₹5,000 / ₹25,000</p>
+                        <p class="text-sm text-purple-500">20% completed</p>
+                    </div>
+                </div>
+                <div class="w-full bg-neutral-200 rounded-full h-2 mb-2">
+                    <div class="bg-purple-500 h-2 rounded-full" style="width: 20%"></div>
+                </div>
+                <div class="flex justify-between">
+                    <button class="text-blue-600 hover:text-blue-700 text-sm">Edit Goal</button>
+                    <button class="text-red-600 hover:text-red-700 text-sm">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white border border-neutral-200/20 rounded-lg p-6">
+        <h2 class="text-lg font-semibold text-neutral-800 mb-4">Completed Goals</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full">
+                <thead>
+                    <tr class="border-b border-neutral-200/20">
+                        <th class="text-left pb-3 text-neutral-600">Goal</th>
+                        <th class="text-left pb-3 text-neutral-600">Target Amount</th>
+                        <th class="text-left pb-3 text-neutral-600">Completion Date</th>
+                        <th class="text-left pb-3 text-neutral-600">Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-neutral-200/20">
+                        <td class="py-3">New Laptop</td>
+                        <td class="py-3">₹2,000</td>
+                        <td class="py-3">June 2023</td>
+                        <td class="py-3">4 months</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3">Home Renovation</td>
+                        <td class="py-3">₹10,000</td>
+                        <td class="py-3">March 2023</td>
+                        <td class="py-3">8 months</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="addSavingsGoalModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-neutral-800">Set New Savings Goal</h2>
+                <button onclick="document.getElementById('addSavingsGoalModal').classList.add('hidden')" class="text-neutral-500 hover:text-neutral-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Goal Name</label>
+                    <input type="text" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="e.g., Dream Vacation">
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Target Amount</label>
+                    <input type="number" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="0.00">
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Current Savings</label>
+                    <input type="number" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="0.00">
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Target Date</label>
+                    <input type="date" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Monthly Contribution</label>
+                    <input type="number" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="0.00">
+                </div>
+                <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Create Goal
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+</htmlCode></element><element id="daafbb68-a464-4a31-862b-e17ae8675b2b" data-section-id="daafbb68-a464-4a31-862b-e17ae8675b2b">
+
+<htmlCode>
+<div id="profile" class="p-6 space-y-6">
+
+    <header class="mb-6">
+        <h1 class="text-2xl font-bold text-neutral-800">Profile & Settings</h1>
+    </header>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <div class="lg:col-span-2 space-y-6">
+
+            <div class="bg-white border border-neutral-200/20 rounded-lg p-6">
+                <h2 class="text-lg font-semibold text-neutral-800 mb-4">Personal Information</h2>
+                <form class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-neutral-600 mb-1">First Name</label>
+                            <input type="text" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" value="Tuf">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-neutral-600 mb-1">Last Name</label>
+                            <input type="text" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" value="Coders">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-neutral-600 mb-1">Email</label>
+                        <input type="email" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" value="tuf.coders@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-neutral-600 mb-1">Phone Number</label>
+                        <input type="tel" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" value="+91 9999999999">
+                    </div>
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        Update Profile
+                    </button>
+                </form>
+            </div>
+
+            <div class="bg-white border border-neutral-200/20 rounded-lg p-6">
+                <h2 class="text-lg font-semibold text-neutral-800 mb-4">Security Settings</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm text-neutral-600 mb-1">Current Password</label>
+                        <input type="password" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="••••••••">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-neutral-600 mb-1">New Password</label>
+                        <input type="password" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="••••••••">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-neutral-600 mb-1">Confirm New Password</label>
+                        <input type="password" class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="••••••••">
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <input type="checkbox" id="2fa" class="rounded border-neutral-300">
+                        <label for="2fa" class="text-sm text-neutral-600">Enable Two-Factor Authentication</label>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        Update Security Settings
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+
+            <div class="bg-white border border-neutral-200/20 rounded-lg p-6">
+                <h2 class="text-lg font-semibold text-neutral-800 mb-4">Currency Settings</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm text-neutral-600 mb-1">Primary Currency</label>
+                        <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                            <option>INR - Indian Rupee</option>
+                            <option>USD - US Dollar</option>
+                            <option>GBP - British Pound</option>
+                            <option>JPY - Japanese Yen</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-neutral-600 mb-1">Currency Format</label>
+                        <select class="w-full px-3 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500">
+                            <option>₹ 1,234.56</option>
+                            <option>$ 1234.56</option>
+                            <option>£ 1,234.56 </option>
+                            <option>¥ 1,234.56 </option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-white border border-neutral-200/20 rounded-lg p-6">
+                <h2 class="text-lg font-semibold text-neutral-800 mb-4">Notification Settings</h2>
+                <form class="space-y-4">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" id="email-alerts" class="rounded border-neutral-300" checked>
+                                <label for="email-alerts" class="text-sm text-neutral-600">Email Alerts</label>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" id="sms-alerts" class="rounded border-neutral-300">
+                                <label for="sms-alerts" class="text-sm text-neutral-600">SMS Alerts</label>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" id="budget-alerts" class="rounded border-neutral-300" checked>
+                                <label for="budget-alerts" class="text-sm text-neutral-600">Budget Alerts</label>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" id="savings-alerts" class="rounded border-neutral-300" checked>
+                                <label for="savings-alerts" class="text-sm text-neutral-600">Savings Goal Alerts</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors w-full">
+                        Save Preferences
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</htmlCode></element><element id="2062fb8c-a9ec-4987-a4ea-504f4b567371" data-section-id="2062fb8c-a9ec-4987-a4ea-504f4b567371">
+
+<htmlCode>
+    <div id="auth" class="min-h-screen flex items-center justify-center bg-neutral-100" style="background-image: url('bg.jpg'); background-size: cover; background-position: center;">
+        <div class="bg-white p-8 rounded-lg shadow-sm border border-neutral-200/20 w-full max-w-md">
+    
+            <div class="text-center mb-8">
+                <h1 class="text-2xl font-bold text-neutral-800 mb-2">Personal Finance Tracker</h1>
+                <p class="text-neutral-600">Manage your finances with ease</p>
+            </div>
+    
+            <div id="loginForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Email</label>
+                    <input type="email" class="w-full px-4 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="your@email.com">
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Password</label>
+                    <input type="password" class="w-full px-4 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="••••••••">
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="remember" class="rounded border-neutral-300">
+                        <label for="remember" class="ml-2 text-sm text-neutral-600">Remember me</label>
+                    </div>
+                    <button onclick="showForgotPassword()" class="text-sm text-blue-600 hover:text-blue-700">Forgot password?</button>
+                </div>
+                <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    Sign In
+                </button>
+                <div class="text-center">
+                    <button onclick="showSignUp()" class="text-sm text-neutral-600 hover:text-neutral-800">
+                        Don't have an account? <span class="text-blue-600">Sign up</span>
+                    </button>
+                </div>
+            </div>
+    
+            <div id="signUpForm" class="hidden space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm text-neutral-600 mb-1">First Name</label>
+                        <input type="text" class="w-full px-4 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="John">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-neutral-600 mb-1">Last Name</label>
+                        <input type="text" class="w-full px-4 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="Doe">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Email</label>
+                    <input type="email" class="w-full px-4 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="your@email.com">
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Password</label>
+                    <input type="password" class="w-full px-4 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="••••••••">
+                </div>
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Confirm Password</label>
+                    <input type="password" class="w-full px-4 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="••••••••">
+                </div>
+                <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    Create Account
+                </button>
+                <div class="text-center">
+                    <button onclick="showLogin()" class="text-sm text-neutral-600 hover:text-neutral-800">
+                        Already have an account? <span class="text-blue-600">Sign in</span>
+                    </button>
+                </div>
+            </div>
+    
+            <div id="forgotPasswordForm" class="hidden space-y-4">
+                <div>
+                    <label class="block text-sm text-neutral-600 mb-1">Email</label>
+                    <input type="email" class="w-full px-4 py-2 border border-neutral-200/20 rounded-lg focus:outline-none focus:border-blue-500" placeholder="your@email.com">
+                </div>
+                <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    Reset Password
+                </button>
+                <div class="text-center">
+                    <button onclick="showLogin()" class="text-sm text-neutral-600 hover:text-neutral-800">
+                        Remember your password? <span class="text-blue-600">Sign in</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    function showLogin() {
+        document.getElementById('loginForm').classList.remove('hidden');
+        document.getElementById('signUpForm').classList.add('hidden');
+        document.getElementById('forgotPasswordForm').classList.add('hidden');
+    }
+    
+    function showSignUp() {
+        document.getElementById('loginForm').classList.add('hidden');
+        document.getElementById('signUpForm').classList.remove('hidden');
+        document.getElementById('forgotPasswordForm').classList.add('hidden');
+    }
+    
+    function showForgotPassword() {
+        document.getElementById('loginForm').classList.add('hidden');
+        document.getElementById('signUpForm').classList.add('hidden');
+        document.getElementById('forgotPasswordForm').classList.remove('hidden');
+    }
+    </script>
+    
+</htmlCode></element>
+            <div id="page_complete">
+            <script>
+                console.log('Page complete');
+            </script>
+            </body>
+            </html>
+          
